@@ -12,7 +12,15 @@ keywords = ["sessions", "sqlx", "sqlite", "postgres", "mysql"]
 categories = ["web-programming::http-server", "web-programming", "database"]
 
 [package.metadata.docs.rs]
-features = ["pg", "sqlite", "mysql", "async_std_native_tls", "async_std_rustls", "tokio_native_tls", "tokio_rustls"]
+features = [
+  "pg",
+  "sqlite",
+  "mysql",
+  "async_std_native_tls",
+  "async_std_rustls",
+  "tokio_native_tls",
+  "tokio_rustls"
+]
 
 [features]
 sqlite = ["sqlx/sqlite"]
@@ -25,12 +33,12 @@ mysql = ["sqlx/mysql", "sqlx/json"]
 
 [dependencies]
 async-session = "3.0.0"
-sqlx = { version = "0.5.5", features = ["chrono"] }
+sqlx = { version = "0.6.0", features = ["chrono"] }
 async-std = { version = "1.9.0", optional = true }
 
 [dev-dependencies]
 async-std = { version = "1.9.0", features = ["attributes"] }
 
 [dev-dependencies.sqlx]
-version = "0.5.5"
+version = "0.6.0"
 features = ["chrono", "runtime-async-std-native-tls"]
